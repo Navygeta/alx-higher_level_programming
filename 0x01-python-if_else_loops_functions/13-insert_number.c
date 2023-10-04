@@ -18,12 +18,12 @@ listint_t *insert_node(listint_t **head, int number);
 	if (*head == NULL || nu_node->n <= (*head) ->n)
 	{
 		nu_node->next = *head;
-		*head - nu_node;
+		*head = nu_node;
 		return (nu_node);
 	}
 	while(node->next && node->next->n < number)
 	{
-		node = node->;
+		node = node->next;
 	}
 
 	nu_node->next = node->next;
