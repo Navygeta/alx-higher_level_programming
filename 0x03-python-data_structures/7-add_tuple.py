@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/usr/bin/python3
 
 """
 Script that adds 2 tuples.
