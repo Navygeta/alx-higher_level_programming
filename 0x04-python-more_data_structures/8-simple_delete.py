@@ -7,5 +7,5 @@ Function that deletes a key in a dictionary.
 
 def simple_delete(a_dictionary, key=""):
 
-    if key in a_dictioanry.get(key) is not None:
+    if a_dictioanry.get(key) is not None:
         del a_dictionary[key]
