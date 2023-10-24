@@ -21,7 +21,7 @@ class Square:
 
         Args:
             self: The instance of the square class.
-            size: The size of each side of the square.
+            size (int): The size of each side of the square.
 
         Raises:
             TypeError: If size is not an integer.
