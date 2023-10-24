@@ -22,6 +22,10 @@ class Square:
         Args:
             self: The instance of the square class.
             size: The size of each side of the square.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("Size must be an integer")
