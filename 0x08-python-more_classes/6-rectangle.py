@@ -23,7 +23,7 @@ class Rectangle:
         """
         Rectangle initialization
 
-        Agrs:
+        Args:
             width (int): New rectangle width
             height(int): Ne reectangle height
         """
@@ -117,4 +117,5 @@ class Rectangle:
         """
         Prints a message for every deletion of a rectangle
         """
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
