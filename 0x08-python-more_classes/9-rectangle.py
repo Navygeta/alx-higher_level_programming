@@ -111,7 +111,7 @@ class Rectangle:
         Args:
             Size (int): Size of new rectangle
         """
-       return (cls(size, size))
+        return cls(size, size)
 
     def __str__(self):
         """
