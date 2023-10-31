@@ -17,8 +17,8 @@ class Rectangle:
     Height (int): The height of the rectangle.
     """
 
-    print_symbol = "#"
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -101,7 +101,7 @@ class Rectangle:
 
         result_str = ""
         for j in range(self.__height):
-            result_str += str(Rectangle.print_symbol) * self.__width + "\n"
+            result_str += str(self.print_symbol) * self.__width + "\n"
 
         return result_str.rstrip()
 
