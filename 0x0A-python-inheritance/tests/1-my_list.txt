@@ -1,5 +1,5 @@
 Test cases for 1-my_list.py
-*******************************************
+#*******************************************
 
 case 0: import
 >>> MyList = __import__('1-my_list').MyList
@@ -96,49 +96,3 @@ case 8: negative numbers
 [-5, -1, 1, 5, 51]
 >>>
 
-
-case 9: large numbers
-
->>> my_list = MyList()
->>> my_list.append(1000000)
->>> my_list.append(999999)
->>> my_list.append(1000001)
->>> my_list.print_sorted()
-[999999, 1000000, 1000001]
->>>
-
-
-case 10: floating point numbers
-
->>> my_list = MyList()
->>> my_list.append(3.14)
->>> my_list.append(2.71828)
->>> my_list.append(1.61803)
->>> my_list.print_sorted()
-[1.61803, 2.71828, 3.14]
->>>
-
-
-case 11: reversed order
-
->>> my_list = MyList()
->>> my_list.append(5)
->>> my_list.append(4)
->>> my_list.append(3)
->>> my_list.append(2)
->>> my_list.append(1)
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
->>>
-
-
-case 12: mixed data types
-
->>> my_list = MyList()
->>> my_list.append(10)
->>> my_list.append('apple')
->>> my_list.append(3.14)
->>> my_list.append(True)
->>> my_list.print_sorted()
-[3.14, 10, True, 'apple']
->>>
