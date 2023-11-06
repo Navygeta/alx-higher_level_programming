@@ -4,7 +4,7 @@ Function that returns true or false if obj is an instance of a class
 """
 
 
-def is_kind_of__class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """
     Returns true or false if obj is an instance of a specified class
 
