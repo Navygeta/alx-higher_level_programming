@@ -5,7 +5,7 @@ first_name, last_name, age
 """
 
 
-class student:
+class Student:
     """
     Representation of class student
 
