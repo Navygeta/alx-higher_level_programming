@@ -2,7 +2,7 @@
 """
 Module that defines Rectangle class theat inherits form class BaseGeometry.
 """
-from __import__('7-base_geometry').BaseGeometry
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
