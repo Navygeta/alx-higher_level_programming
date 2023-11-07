@@ -34,4 +34,5 @@ class Student:
         """
         Public method to retrieve a dict representation of student instance.
         """
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
