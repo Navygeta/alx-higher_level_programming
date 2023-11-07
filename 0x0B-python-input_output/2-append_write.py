@@ -4,7 +4,7 @@ Function that appends text to end of the file
 """
 
 
-def append_file(filename="", text=""):
+def append_write(filename="", text=""):
     """
     Appends contents to the end of file and returns chars to stdout
 
