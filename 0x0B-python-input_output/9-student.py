@@ -30,8 +30,9 @@ class student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
         Public method to retrieve a dict representation of student instance.
         """
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
