@@ -23,7 +23,7 @@ class MyInt(int):
         Returns:
             bool: True if values are not equal, False otherwise.
         """
-        return super().__eq__(value)
+        return self.real != value
 
     def __ne__(self, value):
         """
@@ -35,4 +35,4 @@ class MyInt(int):
         Returns:
             bool: True if values are equal, False otherwise.
         """
-        return super().__ne__(value)
+        return self.real == value
