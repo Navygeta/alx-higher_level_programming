@@ -14,4 +14,4 @@ def save_to_json_file(my_bj, filename):
         filname (str): File where the JSON representation will be saved.
     """
     with open(filename, "w") as file:
-        json.dump(my_obj, f)
+        json.dump(my_obj, file)
