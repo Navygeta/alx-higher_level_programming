@@ -47,5 +47,5 @@ class Student:
         Args:
             json_data (dict): The key/value pairs to replace attributes with.
         """
-    for atr, val in json_data.items():
-        setattr(self, atr, val)
+        for key, val in json_data.items():
+            setattr(self, key, val)
