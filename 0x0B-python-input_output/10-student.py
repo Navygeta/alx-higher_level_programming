@@ -34,9 +34,8 @@ class Student:
         """
         Public method to retrieve a dict representation of student instance.
         """
-    if isinstance(attrs, list) and all(isinstance(atr, str)
-                                       for atr in attrs):
-        return {atr: getattr(self, atr) for atr in attrs
-                if hasattr(self, atr)}
 
-    return self.__dict__
+        if (type(attrs) == list and
+                all(type(atr) == str for atr in attrs)):
+            return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
+        return self.__dict__
