@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-Prints the first State object from the database hbtn_0e_6_usa
+Script that prints the first State object from the given database.
 """
 
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 
 def print_first_state(engine_url):
     """Prints the first State object from the specified database."""
@@ -22,6 +23,7 @@ def print_first_state(engine_url):
         else:
             print(instance.id, instance.name, sep=": ")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         sys.exit("Usage: {} <username> <password> <database>"
@@ -31,4 +33,3 @@ if __name__ == "__main__":
     engUrl = f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}'
 
     print_first_state(engUrl)
-
