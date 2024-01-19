@@ -5,12 +5,11 @@ Script that contains the class definition of a State and an
 instance Base = declarative_base():
 """
 
-import sys
-from sqlalchemy import Column, Integer, String, create_engine, MetaData
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
-custom_meta = MetaData()
-Base = declarative_base(metadata=custom_metadata)
+meta = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
 class State(Base):
@@ -24,7 +23,8 @@ class State(Base):
        each state.
        custom_name (str): The name of the state, with a maximum
        length of 128 characters.
+
     """
     __tablename__ = 'states'
     _id = Column(Integer, unique=True, nullable=False, primary_key=True)
-    _name = Column(String(128), nullable=False)
+    name = Column(String(128), nullable=False)
