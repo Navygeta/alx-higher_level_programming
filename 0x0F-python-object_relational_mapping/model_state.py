@@ -10,31 +10,35 @@ import sys
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
-mymetadata = MetaData(bind=Base.metadata.bind)
-
+custom_metadata = MetaData()
+Base = declarative_base(metadata=custom_metadata)
 
 class State(Base):
     """
-    Class with an id and a name attribute of each state
+    State class representing a state entity in the database.
+
+    Attributes:
+        __tablename__ (str): The name of the database table for the 'State' class.
+        id (int): An auto-generated, unique identifier for each state.
+        name (str): The name of the state, with a maximum length of 128 characters.
     """
     __tablename__ = 'states'
-    id = Column(Integer, unique=True, nullable=False,
-                primary_key=True, autoincrement=True)
-    name = Column(String(128), nullable=False)
-
+    custom_id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    custom_name = Column(String(128), nullable=False)
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        sys.exit("Usage: {} <username> <password> <database>"
+        sys.exit("Usage: {} <custom_username> <custom_password> <custom_database>"
                  .format(sys.argv[0]))
 
-    username, password, database = sys.argv[1:4]
-    engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost/{database}',
+    custom_username, custom_password, custom_database = sys.argv[1:4]
+    custom_engine = create_engine(
+        f'mysql+mysqldb://{custom_username}:{custom_password}@localhost/{custom_database}',
         pool_pre_ping=True
     )
 
-    from model_state import OtherClass
+    # Importing classes before calling create_all
+    from model_state import OtherClass  # Add any other classes you have in model_state
 
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all(custom_engine)
+
