@@ -5,11 +5,13 @@ SCript that Fetches https://intranet.hbtn.io/status.
 
 import urllib.request
 
+
 def fetch_url_content(url):
     request = urllib.request.Request(url)
     with urllib.request.urlopen(request) as response:
         body = response.read()
         return body
+
 
 if __name__ == "__main__":
     url = "https://intranet.hbtn.io/status"
