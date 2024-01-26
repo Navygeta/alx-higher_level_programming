@@ -4,16 +4,21 @@ function that finds a peak in a list of unsorted integers.
 """
 
 
-def find_peak(list_of_integers):
-    if not list_of_integers:
+def find_peak(lst):
+    if not lst:
         return None
 
-    mid = len(list_of_integers) // 2
-    if len(list_of_integers) == 1 or \
-            list_of_integers[mid] >= list_of_integers[mid - 1] and \
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-        return list_of_integers[mid]
+    return find_peak_recursive(lst, 0, len(lst) - 1)
 
-    return (find_peak(list_of_integers[mid:])
-            if list_of_integers[mid] < list_of_integers[mid + 1]
-            else find_peak(list_of_integers[:mid]))
+
+def find_peak_recursive(lst, low, high):
+
+    if low == high:
+        return lst[low]
+
+    mid = (low + high) // 2
+
+    if lst[mid] < lst[mid + 1]:
+        return find_peak_recursive(lst, mid + 1, high)
+    else:
+        return find_peak_recursive(lst, low, mid)
