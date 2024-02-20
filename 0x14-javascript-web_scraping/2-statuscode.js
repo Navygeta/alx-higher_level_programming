@@ -1,7 +1,6 @@
 #!/usr/bin/node
-'use strict';
-const request = require('request-promise');
+const request = require('request');
 
-request(process.argv[2])
-  .then(response => console.log(`code: ${response.statusCode}`))
-  .catch(error => console.error(error));
+request.get(process.argv[2]).on('response', function (response) {
+  console.log(`code: ${response.statusCode}`);
+});
