@@ -1,11 +1,5 @@
 #!/usr/bin/node
-
 'use strict';
-
-const fs = require('fs').promises;
-
-const [,, filePath, contentToWrite] = process.argv;
-
-fs.writeFile(filePath, contentToWrite, 'utf-8')
-  .then(() => console.log(`Content has been successfully written to ${filePath}`))
+require('fs').promises.writeFile(process.argv[2], process.argv[3], 'utf-8')
+  .then(() => console.log(`Content written to ${process.argv[2]}`))
   .catch(error => console.error(error));
